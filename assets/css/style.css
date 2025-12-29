@@ -1,58 +1,348 @@
+/* ===== BASE ===== */
+* {
+  box-sizing: border-box;
+}
+
+/* Reduce overall font size by ~2px (from 16px to 14px) */
+html {
+  font-size: 15px;
+}
+
 body {
   margin: 0;
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: "Source Sans 3", system-ui, sans-serif;
   color: #111;
   background: #fff;
   line-height: 1.6;
 }
 
-nav {
-  max-width: 900px;
-  margin: 40px auto 0;
-  padding: 0 20px;
+/* ===== HEADER ===== */
+.top-header {
+  border-bottom: 1px solid #d9d9d9;
 }
 
-nav a {
-  margin-right: 20px;
+.nav-bar {
+  display: flex;
+  gap: 32px;
+  padding: 14px 32px 0;
+}
+
+/* ===== NAV ITEMS ===== */
+.nav-item {
+  display: inline-flex;
+  align-items: baseline;          /* KEY: align to text baseline */
+  gap: 6px;
+  padding-bottom: 10px;
   text-decoration: none;
-  color: #0066cc;
+  font-size: 12px; /* slightly larger header text */
   font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1;                 /* stabilize baseline */
+  color: rgba(0,0,0,0.45);
+  border-bottom: 3px solid transparent;
 }
 
-main {
-  max-width: 900px;
-  margin: 80px auto;
-  padding: 0 20px;
+.nav-item.active {
+  color: #000;
+  border-bottom-color: #1a73e8;
+}
+
+.nav-item:hover {
+  color: rgba(0,0,0,0.75);
+}
+
+/* ===== ICONS (NO CIRCLE) ===== */
+.icon {
+  display: inline-flex;
+  align-items: baseline;          /* follow text baseline */
+}
+
+.icon svg {
+  width: 14px;
+  height: 14px;
+  display: block;
+  position: relative;
+  top: 0.23em;                    /* OPTICAL CORRECTION */
+  fill: currentColor;
+}
+
+/* ===== CONTENT ===== */
+.content {
+  padding: 25px 32px; /* reduced top padding so image and text sit closer to header */
+  max-width: 1350px;
+}
+
+.about-grid {
+  display: flex;
+  gap: 85px;
+  align-items: flex-start; /* Ensure both image and text align to the top */
+  justify-content: flex-start; /* Align content to the top-left */
+}
+
+/* LEFT */
+.left {
+  flex-shrink: 0; /* Prevent the image container from shrinking */
+  width: 380px; /* Increased width for the image container (150% of previous 300px) */
+}
+
+.left img {
+  width: 100%;
+  border-radius: 14px;
+  margin-top: 0; /* Remove any margin that might push the image higher */
+}
+
+.contacts {
+  margin-top: 20px;
+  color: #444;
+  font-size: 15px;
+}
+
+/* Email styling: 16px blue text with a subtle transparent blue background */
+.contacts .email {
+  font-size: 16px; /* ensure 16px text */
+  color: #1a73e8;
+  background: rgba(26,115,232,0.08);
+  padding: 0;            /* zero padding so bg matches text box exactly */
+  border-radius: 0;
+  display: inline-block; /* inline-block so we can set exact height */
+  line-height: 1em;      /* match height to font-size */
+  height: 1em;           /* force bg box height equal to text height */
+  margin: 0;
+  vertical-align: baseline;
+}
+
+/* RIGHT */
+.right {
+  flex: 1; /* Allow text section to take up remaining space */
+  min-width: 0; /* Prevent flex item from overflowing */
 }
 
 h1 {
-  font-size: 2.4rem;
-  margin-bottom: 0.2em;
+  font-size: 2.5rem;
+  margin-top: 0; /* Remove top margin to align with image */
+  margin-bottom: 1rem;
+  font-weight: 500; /* less bold */
 }
 
-.subtitle {
-  font-size: 1.2rem;
-  color: #555;
-  margin-bottom: 1.5em;
-}
-
-.buttons {
-  margin-top: 2em;
-}
-
-.button {
-  display: inline-block;
-  padding: 10px 18px;
-  margin-right: 10px;
-  background: #0066cc;
-  color: white;
-  border-radius: 6px;
-  text-decoration: none;
+h2 {
+  margin-top: 0;
+  font-size: 1.35rem;
+  color: #5a5a5a; /* lighter heading color */
   font-weight: 500;
 }
 
-.button.outline {
+hr {
+  margin: 32px 0;
+  border: none;
+  border-top: 1px solid #e5e5e5;
+}
+
+/* ===== BUTTONS ===== */
+.actions {
+  margin: 24px 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  margin-right: 10px;
+  background: #1a73e8;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.btn.outline {
   background: none;
-  color: #0066cc;
-  border: 1px solid #0066cc;
+  color: #1a73e8;
+  border: 1px solid #1a73e8;
+}
+
+/* ===== INTEREST ===== */
+.interest {
+  background: #f5f5f5;
+  padding: 8px 16px; /* slightly smaller top/bottom padding */
+  border-radius: 10px;
+  margin-top: 16px;
+}
+
+/* Tighten spacing between interest heading and its paragraph */
+.interest h3 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  font-weight: 500;
+}
+.interest p {
+  margin-top: 0;
+}
+
+.interest p + h3 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+
+/* Container for multiple papers */
+.research-items {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ===== SINGLE PAPER ITEM ===== */
+.research-item {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  gap: 24px;
+  padding: 20px;
+  border: none; /* removed dashed border */
+  border-radius: 12px;
+  background: #fafafa;
+  cursor: pointer; /* indicate item is clickable */
+  position: relative; /* allow inline popout to appear as extension */
+}
+
+/* Image */
+.research-item .research-item-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* Text */
+.research-item .paper-title {
+  font-size: 20px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.research-item .paper-authors {
+  color: #1a73e8;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.research-item .paper-authors a {
+  text-decoration: none;
+  color: #1a73e8;
+  font-weight: 300;
+}
+
+.research-item .paper-authors a.author-dashed {
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-underline-offset: 3px;
+}
+
+.research-item .paper-venue {
+  font-size: 14px;
+  font-weight: 500; 
+  color: #444;
+  margin-bottom: 10px;
+}
+
+/* Links */
+.research-item .paper-links {
+  display: flex;
+  gap: 15px;
+  font-size: 16px;
+  color: #1a73e8;
+}
+
+.research-item .paper-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #1a73e8;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.research-item .paper-link:hover {
+  text-decoration: underline;
+}
+
+/* Icons */
+.research-item .paper-link svg {
+  width: 15px;
+  height: 15px;
+  vertical-align: -.125em;
+  fill: currentColor;
+}
+
+/* ===== BIB POPOUT ===== */
+.research-item .bib-popout {
+  grid-column: 1 / -1; /* span across the grid but we'll limit width */
+  margin-top: 16px;
+  padding: 14px 18px; /* unified padding for text and buttons */
+  background: #fafbfc; /* slightly lighter gray */
+  border: 1px solid #e6e8e9;
+  border-radius: 10px;
+  box-shadow: none; /* remove shadow */
+  max-width: calc(100% - 25px); /* inset from the right a bit */
+  justify-self: start; /* align to the left of the grid */
+}
+
+.research-item .bib-popout[hidden] {
+  display: none;
+}
+
+.research-item .bib-content {
+  display: block;
+}
+
+.research-item .bib-text {
+  margin: 0;
+  padding: 0; /* let the outer box provide padding */
+  background: transparent;
+  border: none;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #333;
+  overflow-x: auto;
+  white-space: pre;
+  user-select: all;
+}
+
+.research-item .bib-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 0px;
+}
+
+.research-item .bib-btn {
+  padding: 8px 14px;
+  background: #1a73e8;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.research-item .bib-btn:hover { background: #1557b0; }
+
+.research-item .bib-btn.outline {
+  background: transparent;
+  color: #1a73e8;
+  border: 1px solid #1a73e8;
+}
+
+.research-item .bib-btn.outline:hover { background: rgba(26,115,232,0.06); }
+
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .interest-item {
+    grid-template-columns: 1fr;
+  }
 }

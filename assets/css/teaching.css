@@ -58,7 +58,7 @@
 /* ===== Course Card ===== */
 .course-card {
   display: flex;
-  gap: 40px;
+  gap: 25px;
   align-items: flex-start;
   position: relative;
 }
@@ -70,6 +70,8 @@
 .course-card .course-description {
   margin: 8px 0px 24px 0px;
   color: #333;
+  text-align: justify;
+
 }
 
 .course-card .course-materials summary {

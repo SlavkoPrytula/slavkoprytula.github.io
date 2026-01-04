@@ -1,0 +1,209 @@
+
+/* ================ */
+/* === Teaching === */
+/* ================ */
+
+.teaching-page {
+  display: flex;
+  gap: 85px;
+  align-items: flex-start; /* Ensure both image and text align to the top */
+  justify-content: flex-start; /* Align content to the top-left */
+}
+
+.teaching-page .left {
+  flex-shrink: 0;
+  width: 950px;
+}
+
+.teaching {
+  background: #f5f5f5;
+  padding: 8px 16px;
+  border-radius: 10px;
+  /* margin-top: 16px; */
+}
+
+.teaching h3 {
+  margin: 0 0 8px 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.teaching p {
+  margin-top: 0;
+}
+
+.teaching p + h3 {
+  margin: 0 0 0px 0;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+
+.teaching .course-title {
+  font-size: 20px;
+  margin-bottom: 16px;
+  margin-top: 0px;
+}
+.teaching .course-title .fa-square {
+  font-size: 8px;
+  margin-right: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: 3px;
+  line-height: 1;
+}
+
+
+/* ===== Course Card ===== */
+.course-card {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  position: relative;
+}
+
+.course-card .course-text {
+  flex: 1;
+}
+
+.course-card .course-description {
+  margin: 8px 0px 24px 0px;
+  color: #333;
+}
+
+.course-card .course-materials summary {
+  cursor: pointer;
+  font-weight: 500;
+  margin-bottom: 16px;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+}
+
+.course-card .course-materials ul {
+  margin: 0px 0px 0px 18px;
+  padding: 0;
+}
+.course-card .course-materials li {
+  margin-bottom: 6px;
+}
+.course-card .course-materials a {
+  color: #1a73e8;
+  text-decoration: none;
+}
+.course-card .course-materials a:hover {
+  text-decoration: underline;
+}
+
+.course-card .course-image {
+  margin-left: auto;
+  width: 220px;
+  flex-shrink: 0;
+  margin: 8px 0px 8px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.course-card .course-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.course-card .course-btn {
+  margin-top: 12px;
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 10px 0;
+}
+
+.course-card .course-btn {
+  box-shadow: 0 6px 14px rgba(26,115,232,0.10);
+}
+.course-card .course-btn.btn.outline {
+  border: 2px solid #1a73e8;
+}
+.course-card .course-btn:hover {
+  box-shadow: 0 8px 20px rgba(26,115,232,0.14);
+}
+
+
+/* ===== Lecture list  ===== */
+
+.lecture-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 4px 0px 24px 16px;
+}
+
+.lecture-item {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  column-gap: 24px;
+  align-items: start;
+}
+
+.lecture-date {
+  font-size: 14px;
+  color: #6c6c6c;
+  white-space: nowrap;
+}
+
+.lecture-pdf {
+  display: block; /* place below the date */
+  margin-top: 0px;
+  color: #1a73e8;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.lecture-pdf .fa-file-pdf {
+  display: inline-block;
+  font-size: 13px;
+  vertical-align: middle;
+  margin-right: 0px;
+}
+
+.lecture-title {
+  font-size: 16px;
+  font-weight: 400;
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+.lecture-title .lecture-code {
+  color: #6c6c6c; /* keep [L0X] grayish */
+  font-weight: 500;
+  margin-right: 0px;
+}
+
+.lecture-description {
+  margin-top: 0px;
+  font-size: 13px; /* slightly smaller */
+  color: #4a6f8a;
+  line-height: 1.25;
+}
+
+
+/* ================================================== */
+/* Mobile */
+@media (max-width: 900px) {
+  .teaching-page {
+    grid-template-columns: 1fr;
+  }
+
+  .course-card { flex-direction: column; }
+  .course-card .course-btn {
+    position: static;
+    margin-top: 12px;
+    align-self: flex-end;
+  }
+}

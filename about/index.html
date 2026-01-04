@@ -10,7 +10,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <base href="../">
+  <base href="../"> 
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    crossorigin="anonymous"
+  />
 
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -21,7 +27,7 @@
 <header class="top-header">
   <nav class="nav-bar">
 
-    <a class="nav-item active" href="about/">
+    <a class="nav-item" href="about/">
       <span class="icon">
         <!-- INFO icon -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM288 224C288 206.3 302.3 192 320 192C337.7 192 352 206.3 352 224C352 241.7 337.7 256 320 256C302.3 256 288 241.7 288 224zM280 288L328 288C341.3 288 352 298.7 352 312L352 400L360 400C373.3 400 384 410.7 384 424C384 437.3 373.3 448 360 448L280 448C266.7 448 256 437.3 256 424C256 410.7 266.7 400 280 400L304 400L304 336L280 336C266.7 336 256 325.3 256 312C256 298.7 266.7 288 280 288z"/></svg>
@@ -62,7 +68,7 @@
 <!-- ===== CONTENT ===== -->
 <main class="content">
 
-  <div class="about-grid">
+  <div class="about-page">
 
     <!-- LEFT -->
     <aside class="left">
@@ -72,7 +78,25 @@
         <strong>Contacts</strong>
         <br>
         Email:
-        <span class="email">yaroslav.prytula@ut.ee</span>
+        &nbsp;<span class="email">s.prytula@ucu.edu.ua</span>,
+        &nbsp;<span class="email">yaroslav.prytula@ut.ee</span>
+
+        <div class="socials">
+          <a class="social-link" href="https://github.com/SlavkoPrytula" target="_blank" rel="noopener" aria-label="GitHub">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+            <span>GitHub</span>
+          </a>
+
+          <a class="social-link" href="https://www.linkedin.com/in/yaroslav-prytula-3166471b0/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+            <span>LinkedIn</span>
+          </a>
+
+          <a class="social-link" href="https://www.kaggle.com/slavkoprytula" target="_blank" rel="noopener" aria-label="Kaggle">
+            <i class="fa-brands fa-kaggle" aria-hidden="true"></i>
+            <span>Kaggle</span>
+          </a>
+        </div>
       </div>
     </aside>
 
@@ -194,78 +218,9 @@
 
 </main>
 
-<!--  -->
-<script>
-// Handle Bib popout toggle and prevent propagation to research-item click
-document.addEventListener('click', function(e) {
-  // Toggle popout on Bib link click
-  const bibToggle = e.target.closest('[data-bib-toggle]');
-  if (bibToggle) {
-    e.preventDefault();
-    e.stopPropagation();
-    const id = bibToggle.getAttribute('data-bib-toggle');
-    const popout = document.getElementById('bib-' + id);
-    if (popout) {
-      const isHidden = popout.hasAttribute('hidden');
-      // Close all other popouts
-      document.querySelectorAll('.bib-popout').forEach(p => p.setAttribute('hidden', ''));
-      // Toggle current popout
-      if (isHidden) {
-        popout.removeAttribute('hidden');
-      }
-    }
-    return;
-  }
+<!-- ===== SCRIPTS ===== -->
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/bib.js"></script>
 
-  // Copy BibTeX
-  const copyBtn = e.target.closest('[data-bib-copy]');
-  if (copyBtn) {
-    e.preventDefault();
-    e.stopPropagation();
-    const id = copyBtn.getAttribute('data-bib-copy');
-    const popout = document.getElementById('bib-' + id);
-    if (popout) {
-      const bibText = popout.querySelector('.bib-text');
-      if (bibText && navigator.clipboard) {
-        navigator.clipboard.writeText(bibText.textContent).then(() => {
-          const originalText = copyBtn.textContent;
-          copyBtn.textContent = 'Copied!';
-          copyBtn.style.background = '#34a853';
-          setTimeout(() => {
-            copyBtn.textContent = originalText;
-            copyBtn.style.background = '';
-          }, 2000);
-        });
-      }
-    }
-    return;
-  }
-
-  // Close popout
-  const closeBtn = e.target.closest('[data-bib-close]');
-  if (closeBtn) {
-    e.preventDefault();
-    e.stopPropagation();
-    const id = closeBtn.getAttribute('data-bib-close');
-    const popout = document.getElementById('bib-' + id);
-    if (popout) {
-      popout.setAttribute('hidden', '');
-    }
-    return;
-  }
-
-  // Close popouts when clicking outside
-  if (!e.target.closest('.bib-popout')) {
-    document.querySelectorAll('.bib-popout').forEach(p => p.setAttribute('hidden', ''));
-  }
-}, true); // Use capture phase to intercept before research-item onclick
-
-// Close popouts on Escape key
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    document.querySelectorAll('.bib-popout').forEach(p => p.setAttribute('hidden', ''));
-  }
-});
-</script>
 </body>
 </html>

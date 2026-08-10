@@ -67,6 +67,12 @@
   flex: 1;
 }
 
+.course-card + .course-card {
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid #dddddd;
+}
+
 .course-card .course-description {
   margin: 8px 0px 24px 0px;
   color: #333;
@@ -98,6 +104,12 @@
   text-decoration: underline;
 }
 
+.course-card .materials-empty {
+  margin: 0 0 20px 16px;
+  color: #929292;
+  font-size: 14px;
+}
+
 .course-card .course-image {
   margin-left: auto;
   width: 220px;
@@ -112,6 +124,10 @@
   height: auto;
   border-radius: 8px;
   background: #fff;
+}
+
+.course-card .course-image img.transformer-course-image {
+  border-radius: 18px;
 }
 
 .course-card .course-btn {
@@ -143,6 +159,13 @@
   flex-direction: column;
   gap: 14px;
   margin: 4px 0px 24px 16px;
+}
+
+.lecture-topic {
+  margin: 0;
+  color: #929292;
+  font-size: 17px;
+  font-weight: 500;
 }
 
 .lecture-item {

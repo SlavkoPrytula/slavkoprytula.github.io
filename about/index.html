@@ -18,7 +18,7 @@
     crossorigin="anonymous"
   />
 
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=20260810-6">
 </head>
 
 <body>
@@ -103,17 +103,13 @@
     <!-- RIGHT -->
     <section class="right">
       <h1>Yaroslav Prytula</h1>
+      <p class="profile-subtitle">Computer Vision Researcher</p>
 
-      <p>
-        I am interested in solid <strong>theoretical and algorithmic foundations</strong>
-        for learning and computational decision-making under imperfect information.
-        To achieve that, I combine techniques from machine learning, optimization,
-        and statistics.
-      </p>
-
-      <p>
-        My research focuses on instance-aware segmentation, transformer-based models,
-        and biomedical imaging, with an emphasis on robustness and overlapping objects.
+      <p class="intro-text">
+        First-year PhD student in Computer Science at the University of Tartu and Ukrainian Catholic University,
+        focusing on machine learning and computer vision. As a Research Engineer at the Biomedical Computer Vision
+        Group I do research on transformer-based segmentation, detection, representation learning, and foundation
+        models for medical imaging.
       </p>
 
       <div class="actions">
@@ -124,19 +120,69 @@
 
       <hr>
 
-      <h2>Some current research interests</h2>
+      <h2 class="research-interests-title">Current research interests</h2>
 
       <div class="interest">
         <!-- Interest header (KEEP THIS) -->
-        <h3>Medical Computer Vision</h3>
-        <p>
+        <h3 class="interest-title">Medical Computer Vision</h3>
+        <p class="interest-description">
           Query-based and transformer-driven segmentation models for overlapping
           objects in biomedical images.
         </p>
-        <h3>Publications on this topic:</h3>
-
         <!-- Papers under this interest -->
         <div class="research-items">
+
+          <!-- QCell Paper (Start) -->
+          <div class="research-item"
+              role="link"
+              tabindex="0"
+              onclick="window.location.href='https://slavkoprytula.github.io/QCell/'"
+              onkeydown="if(event.key==='Enter') window.location.href='https://slavkoprytula.github.io/QCell/'">
+
+              <!-- LEFT: image -->
+              <div class="research-item-image">
+                <img src="assets/research/QCell/qcell.png"
+                    alt="QCell architecture">
+              </div>
+
+              <!-- RIGHT: text -->
+              <div class="research-item-content">
+                <h4 class="paper-title">
+                  QCell: Recombining and Aligning Cell Queries for Overlapping Instance Segmentation
+                </h4>
+
+                <p class="paper-authors">
+                  <a href="https://scholar.google.com/citations?user=RLf-ytQAAAAJ&amp;hl" class="author-dashed" onclick="event.stopPropagation();">Yaroslav Prytula</a>,
+                  <a href="https://scholar.google.com/citations?user=L5CKTZoAAAAJ&amp;hl=en" onclick="event.stopPropagation();">Anton Popov</a>,
+                  <a href="https://scholar.google.com/citations?user=IOuDrrEAAAAJ&amp;hl=en" onclick="event.stopPropagation();">Dmytro Fishman</a>
+                </p>
+
+                <p class="paper-venue">
+                  In <em class="conference-highlight">BMVC 2026</em>
+                </p>
+
+                <div class="paper-links">
+                  <a href="" class="paper-link is-disabled" aria-disabled="true" tabindex="-1"
+                    onclick="event.preventDefault(); event.stopPropagation();">
+                    <i class="fa-solid fa-copy" aria-hidden="true"></i>
+                    Bib
+                  </a>
+
+                  <a href="" class="paper-link is-disabled" aria-disabled="true" tabindex="-1"
+                    onclick="event.preventDefault(); event.stopPropagation();">
+                    <i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
+                    PDF
+                  </a>
+
+                  <a href="https://github.com/SlavkoPrytula/QCell"
+                    class="paper-link" onclick="event.stopPropagation();">
+                    <i class="fa-brands fa-github" aria-hidden="true"></i>
+                    Code
+                  </a>
+                </div>
+              </div>
+          </div>
+          <!-- QCell Paper (End) -->
           
           <!-- IAUNet Paper (Start) -->
           <div class="research-item"
@@ -165,7 +211,7 @@
               </p>
 
               <p class="paper-venue">
-                In <em>CVPR Workshops 2025</em>
+                In <em class="conference-highlight">CVPR Workshops 2025</em>
               </p>
 
               <div class="paper-links">

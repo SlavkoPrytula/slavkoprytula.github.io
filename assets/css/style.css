@@ -98,9 +98,14 @@ body {
   font-size: 17px !important;
 }
 
+.contacts .contacts-title {
+  font-size: 21px;
+}
+
 .contacts .socials {
   margin-top: 8px;
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   align-items: center;
 }
@@ -121,6 +126,20 @@ body {
   margin-right: 8px;
   font-size: 18px;
   vertical-align: middle;
+}
+
+.contacts .social-brand-icon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  vertical-align: -3px;
+  background-color: currentColor;
+}
+
+.contacts .researchgate-square-icon {
+  -webkit-mask: url("../icons/researchgate-square.svg") center / contain no-repeat;
+  mask: url("../icons/researchgate-square.svg") center / contain no-repeat;
 }
 
 .contacts .social-link span { vertical-align: middle; }
@@ -207,7 +226,7 @@ hr {
 .btn.outline {
   background: none;
   color: #1a73e8;
-  border: 1px solid #1a73e8;
+  border: 2px solid #1a73e8;
 }
 
 
@@ -441,9 +460,13 @@ hr {
 /* ================ */
 
 /* ===== PUBLICATIONS PAGE ===== */
+.publications-content {
+  max-width: 1390px;
+}
+
 .publications-page {
   display: flex;
-  gap: 85px;
+  gap: 70px;
   align-items: flex-start; /* Ensure both image and text align to the top */
   justify-content: flex-start; /* Align content to the top-left */
 }
@@ -454,8 +477,8 @@ hr {
 }
 
 .publications-page .right {
-  /* flex: 1; */
-  min-width: 0;
+  flex: 1 0 365px;
+  min-width: 365px;
 }
 
 
@@ -504,6 +527,14 @@ hr {
 
 .publications-page .menu p {
   margin-top: 0;
+}
+
+.publications-page .menu .publication-summary {
+  font-size: 17px !important;
+}
+
+.publications-page .menu .btn {
+  font-size: 17px !important;
 }
 
 .publications-page .menu p + h3 {

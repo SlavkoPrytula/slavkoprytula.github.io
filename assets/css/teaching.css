@@ -44,6 +44,10 @@
   margin-bottom: 16px;
   margin-top: 0px;
 }
+
+.teaching .course-affiliation {
+  color: #ff3860;
+}
 .teaching .course-title .fa-square {
   font-size: 8px;
   margin-right: 8px;

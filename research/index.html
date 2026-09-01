@@ -112,14 +112,13 @@
 				</p>
 
 				<div class="paper-links">
-					<a href="" class="paper-link is-disabled" aria-disabled="true" tabindex="-1"
-					onclick="event.preventDefault(); event.stopPropagation();">
+					<a href="#" class="paper-link" data-bib-toggle="qcell">
 					<i class="fa-solid fa-copy" aria-hidden="true"></i>
 					Bib
 					</a>
 
-					<a href="" class="paper-link is-disabled" aria-disabled="true" tabindex="-1"
-					onclick="event.preventDefault(); event.stopPropagation();">
+					<a href="https://arxiv.org/abs/2608.29253" class="paper-link"
+					onclick="event.stopPropagation();">
 					<i class="fa-solid fa-file-pdf" aria-hidden="true"></i>
 					PDF
 					</a>
@@ -129,6 +128,21 @@
 					<i class="fa-brands fa-github" aria-hidden="true"></i>
 					Code
 					</a>
+				</div>
+			  </div>
+
+			  <div class="bib-popout" id="bib-qcell" hidden>
+				<div class="bib-content">
+				  <pre class="bib-text" tabindex="0">@article{prytula2026qcell,
+  title   = {QCell: Recombining and Aligning Cell Queries for Overlapping Instance Segmentation},
+  author  = {Prytula, Yaroslav and Popov, Anton and Fishman, Dmytro},
+  journal = {arXiv preprint arXiv:2608.29253},
+  year    = {2026}
+}</pre>
+				  <div class="bib-actions">
+					<button class="bib-btn" data-bib-copy="qcell">Copy</button>
+					<button class="bib-btn outline" data-bib-close="qcell">Close</button>
+				  </div>
 				</div>
 			  </div>
 		  </div>
